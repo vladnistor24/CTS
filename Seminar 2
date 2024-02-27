@@ -1,0 +1,66 @@
+//SRP
+
+class VehicleDetails{
+    public void printDetails() {
+
+    }
+}
+
+class VehicleValues {
+    public void calculateValues() {
+
+    }
+}
+
+class VehicleDB {
+    public void addVehicleToDB() {
+
+    }
+}
+
+
+//OCP
+
+interface Vehicle {
+    double calculateValue();
+}
+
+class Car implements Vehicle {
+    private double v;
+    @Override
+    public double calculateValue() {
+        return 0;
+    }
+}
+
+class Bike implements Vehicle {
+    private double vehicle;
+    @Override
+    public double calculateValue() {
+        return 0;
+    }
+}
+
+
+//LSP
+
+
+interface Width {
+    void setWidth();
+}
+
+class Rectangle implements Width {
+    public void setWidth() {
+
+    }
+}
+
+class Square implements Height {
+    public void setHeight(){
+
+    }
+}
+
+interface Height {
+    void setHeight();
+}

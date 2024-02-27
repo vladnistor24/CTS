@@ -1,0 +1,48 @@
+//package ro.ase.cts.s01;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Calculator {
+    public double calculateX5PlusY7() throws IOException {
+        double result = 0.0;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        double[] arr = readValues(reader);
+        double[] powers = new double[] { 5, 7 };
+        
+        for(int i = 0; i < arr.length; i++) {
+            arr[i] = toPower(arr[i], powers[i]);
+        }
+        result = addition(arr);
+        return result;
+    }
+
+    public double[] readValues(BufferedReader reader) {
+        double[] values = new double[]{};
+        try {
+            String currentValue = reader.readLine();
+            while(currentValue != null) {
+                double current = Double.parseDouble(currentValue);
+//                values.push(current);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return values;
+    }
+    
+    public double toPower(double value, double power) {
+        double initial = value;
+        for (int i = 1; i < power; i++) initial *= value;
+        return initial;
+    }
+    
+    public double addition(double[] arr) {
+        double result = 0;
+        for(int i = 0; i < arr.length; i++) {
+            result += arr[i];
+        }
+        return result;
+    }
+}
